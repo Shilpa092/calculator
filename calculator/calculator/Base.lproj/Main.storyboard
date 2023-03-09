@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="6" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bill total" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-6m-O6X">
+                                <rect key="frame" x="20" y="60" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tip percentage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1q-22-Sci">
+                                <rect key="frame" x="20" y="102" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-q3-d0h">
+                                <rect key="frame" x="156" y="167" width="102.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="calculate tip"/>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8nD-nV-E6p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tip:$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-Aj-qzz">
+                                <rect key="frame" x="176" y="195" width="62" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yfe-Aj-qzz" firstAttribute="firstBaseline" secondItem="iXa-q3-d0h" secondAttribute="baseline" constant="22" symbolType="layoutAnchor" id="26j-hL-uhP"/>
+                            <constraint firstItem="yfe-Aj-qzz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HV2-D1-qDU"/>
+                            <constraint firstItem="wcb-6m-O6X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ijd-U4-vZO"/>
+                            <constraint firstItem="J1q-22-Sci" firstAttribute="top" secondItem="wcb-6m-O6X" secondAttribute="bottom" constant="8" id="Le9-G2-eKr"/>
+                            <constraint firstItem="wcb-6m-O6X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LuU-DC-04n"/>
+                            <constraint firstItem="iXa-q3-d0h" firstAttribute="top" secondItem="J1q-22-Sci" secondAttribute="bottom" constant="31" id="O4X-qg-MoG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J1q-22-Sci" secondAttribute="trailing" constant="20" id="aNe-9W-3Fm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wcb-6m-O6X" secondAttribute="trailing" constant="20" id="iGg-PB-EGB"/>
+                            <constraint firstItem="wcb-6m-O6X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="inj-dl-Doo"/>
+                            <constraint firstItem="iXa-q3-d0h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="liM-9L-tsD"/>
+                            <constraint firstItem="J1q-22-Sci" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tt0-XE-XWm"/>
+                            <constraint firstItem="J1q-22-Sci" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vvO-pL-ent"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="billTotalTextfield" destination="wcb-6m-O6X" id="yNC-fF-riD"/>
+                        <outlet property="tipLabel" destination="yfe-Aj-qzz" id="avG-Iu-U5i"/>
+                        <outlet property="tipPercentageTextfield" destination="J1q-22-Sci" id="1ny-Q5-Mrk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="87"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
